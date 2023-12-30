@@ -195,10 +195,12 @@ if (Userdata) {
               if (isLoggedIn != null) {
                 console.log(
                   ` Hello  ${Userdata[i].uName} your order is Abrove `
-                ); Userorders = Userorders.concat(order)            
+
+                );
+                           
               }
 
-            } 
+            } push_order();
             
           }
         });
@@ -244,6 +246,38 @@ function abroveFunction() {
   localStorage.setItem("cartItems", JSON.stringify(dataRet));
   location.reload();
 }
+
+// push cart item  in order list 
+function push_order(){
+  let getItemss = localStorage.getItem("cartItems");
+  let dataRet = JSON.parse(getItemss || "[]");
+  for(let i=0;i<dataRet.length;i++){
+  const order = {
+      Stock : dataRet[i].Stock,
+      category : dataRet[i].category,
+      pimg: dataRet[i].image || dataRet[i].pimg,
+      pname: dataRet[i].pname || dataRet[i].title,
+      price:  dataRet[i].price
+         }
+         Userorders.push(order)
+         localStorage.setItem("userOrders", JSON.stringify(Userorders));
+  }
+console.log(Userorders);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let userData = sessionStorage.getItem("nameOfUser");
 let isLoggedIn = sessionStorage.getItem("loginStatus");
