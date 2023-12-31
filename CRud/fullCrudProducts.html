@@ -3,11 +3,65 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style1.css">
+        <!-- <link rel="stylesheet" href="style1.css"> -->
+        <link rel="stylesheet" href="">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 
     </head>
     <body>
-        <div >
+      <form class="container w-75 mx-auto p-5 m-5 shadow-lg">
+        <h1 style="text-align: center;">Add Product</h1>
+        <div class="mb-3">
+          <label for="productName" class="form-label">Product Name </label>
+          <input type="text" class="form-control" id="productName"  >
+        </div>
+        <div class="mb-3">
+          <input type="file" class="form-control" id="img">
+        </div>
+        <div class="mb-3">
+          <label for="">Select Category </label>
+          <select class="form-select" style="width: 100%; height: 40;" id="category-list"   aria-label="select example">
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="productPrice" class="form-label">Product Price </label>
+          <input type="number" class="form-control" id="productPrice"  >
+        </div>
+        <div class="mb-3">
+          <label for="Stock" class="form-label">Stock Quantity </label>
+          <input type="number" class="form-control" id="Stock" >
+        </div>
+        <div class="form-floating mb-4">
+          <textarea class="form-control"  placeholder="Leave a comment here" id="productDesc"></textarea>
+          <label for="productDesc">product Description</label>
+        </div>
+
+        <div class="mb-4">
+        <input type="submit" id="addProduct" class="btn btn-primary" value="Submit">
+        <input type="submit" onclick="clearForm()"  class="btn btn-info" value="clear"> 
+        </div>
+      </form>
+      <div class="table-responsive">
+      <table class="table table-hover" >
+        <thead>
+            <th scope="col">index</th>
+            <th scope="col">name</th>
+            <th scope="col">imgs</th>
+            <th scope="col">price</th>
+            <th scope="col">productCategory </th>
+            <th scope="col">desc</th>
+            <th scope="col">stockQuantity</th>
+            <th scope="col">Edite</th>
+            <th scope="col">delete</th>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+      </div>
+
+
+
+        <!-- <div >
             <h1>Add Product</h1>
             <h3 id="error"></h3>
             <label>productName:</label>
@@ -47,7 +101,7 @@
             <h2>Product Items</h2>
             <div id="display_items">
             </div>
-          </div>
+          </div> -->
           <script>
 // The provided code already implements full CRUD functionality for category management, including:
 // 1-  Create:
@@ -209,31 +263,31 @@ search about
 1- products Name Lowercase and capital case   
 */
 // search
-function searchProdct(){
-var trs='';
-for(var i =0 ; i<productContainer.length;i++){
-  if(productContainer[i].pname.toLowerCase().includes(searchValue.value.toLowerCase()) )
-  {
-    trs +=`<tr>
-    <td>${i+1}</td>
-    <td>${productContainer[i].pname}</td>
-    <td>${productContainer[i].pimg}</td>
-    <td>${productContainer[i].price}</td>
-    <td>${productContainer[i].category}</td>
-    <td>${productContainer[i].desc}</td>
-    <td>${productContainer[i].Stock}</td>
-    <td>
-      <button  onclick="getProductInfo(${i})" class="btnEdit" ></button>
-    </td>
-    <td>
-      <button  onclick="delet(${i})" class="btndelet"></button>
-    </td>
-  </tr>`
-  }
+// function searchProdct(){
+// var trs='';
+// for(var i =0 ; i<productContainer.length;i++){
+//   if(productContainer[i].pname.toLowerCase().includes(searchValue.value.toLowerCase()) )
+//   {
+//     trs +=`<tr>
+//     <td>${i+1}</td>
+//     <td>${productContainer[i].pname}</td>
+//     <td>${productContainer[i].pimg}</td>
+//     <td>${productContainer[i].price}</td>
+//     <td>${productContainer[i].category}</td>
+//     <td>${productContainer[i].desc}</td>
+//     <td>${productContainer[i].Stock}</td>
+//     <td>
+//       <button  onclick="getProductInfo(${i})" class="btnEdit" ></button>
+//     </td>
+//     <td>
+//       <button  onclick="delet(${i})" class="btndelet"></button>
+//     </td>
+//   </tr>`
+//   }
 
-}
-document.getElementById('tableBody').innerHTML= trs;
-}
+// }
+// document.getElementById('tableBody').innerHTML= trs;
+// }
 
 /* 
 Validate poroduct name , product price ,product category 
@@ -259,39 +313,39 @@ var Stock=productStock.value;
 /*
 Display products as cards 
 */
-function display_items(){ 
-for(var i =0 ; i<productContainer.length;i++){
- document.getElementById(
-       "display_items"
-              ).innerHTML += 
-                  `<div class='full-sec'>
-                  <div class='products'>
-                  <div class="product-card-1">
-                  <div class="product-image-1">
-                    <img src="${productContainer[i].pimg}"   alt="" />
-                  </div>
-                  <div class="product-info-1">
-                    <p class="data-name">${productContainer[i].pname}</p>
-                    <p id="price">${productContainer[i].price}$</p>
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae dicta molestiae,
-                     laboriosam quasi debitis ea sint soluta hic, nihil aperiam dolorum quaerat quisquam 
-                     asperiores? Ipsam nesciunt dignissimos blanditiis qui quasi.
+// function display_items(){ 
+// for(var i =0 ; i<productContainer.length;i++){
+//  document.getElementById(
+//        "display_items"
+//               ).innerHTML += 
+//                   `<div class='full-sec'>
+//                   <div class='products'>
+//                   <div class="product-card-1">
+//                   <div class="product-image-1">
+//                     <img src="${productContainer[i].pimg}"   alt="" />
+//                   </div>
+//                   <div class="product-info-1">
+//                     <p class="data-name">${productContainer[i].pname}</p>
+//                     <p id="price">${productContainer[i].price}$</p>
+//                     <p>
+//                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae dicta molestiae,
+//                      laboriosam quasi debitis ea sint soluta hic, nihil aperiam dolorum quaerat quisquam 
+//                      asperiores? Ipsam nesciunt dignissimos blanditiis qui quasi.
 
-                    </p>
-                    <p id="shipping">Free Shipping</p>
-                    <div class="cart-items">
-                      <a href="#">View details</a>
-                      <button>Add To Cart</button>
-                      <i class="fa-regular fa-heart"></i>
-                      <i class="fa-solid fa-heart added"></i>
-                    </div>
-                  </div>
-                </div>
-                </div><br>`;
-  }
-}
-display_items();
+//                     </p>
+//                     <p id="shipping">Free Shipping</p>
+//                     <div class="cart-items">
+//                       <a href="#">View details</a>
+//                       <button>Add To Cart</button>
+//                       <i class="fa-regular fa-heart"></i>
+//                       <i class="fa-solid fa-heart added"></i>
+//                     </div>
+//                   </div>
+//                 </div>
+//                 </div><br>`;
+//   }
+// }
+// display_items();
 
           </script>
     <script src="category.js"></script>
