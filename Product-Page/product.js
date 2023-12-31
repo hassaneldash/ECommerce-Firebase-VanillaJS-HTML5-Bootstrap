@@ -132,14 +132,15 @@ for (let i = 0; i < 20; i++) {
       if (snapshot.exists()) {
         var Data = snapshot.val();
         const prodEle = document.createElement("div");
-        prodEle.innerHTML = ` <div class="product-card-1">
-            <div class="product-image-1">
-              <img src="${Data.image}"   alt="" />
+        prodEle.innerHTML = ` 
+        <div class="card product-card-1 ">
+            <div class="product-image-1 ">
+              <img src="${Data.image}" class="card-img-top"   alt="" />
             </div>
-            <div class="product-info-1">
-              <p class="data-name">${Data.title}</p>
-              <p id="price">${Data.price}$</p>
-              <p>
+            <div class="card-body product-info-1">
+              <p class="card-title data-name">${Data.title}</p>
+              <p id="price" class="card-text">${Data.price}$</p>
+              <p class="card-text">
                 ${Data.description}
               </p>
               <p id="shipping">Free Shipping</p>
@@ -152,6 +153,24 @@ for (let i = 0; i < 20; i++) {
             </div>
           </div>
         `;
+
+
+//         <div class="card product-card-1">
+//     <img src="${Data.image}" class="card-img-top" alt="Product Image">
+//     <div class="card-body">
+//         <h5 class="card-title data-name">${Data.title}</h5>
+//         <p class="card-text">${Data.description}</p>
+//         <p class="card-text"><strong>${Data.price}$</strong></p>
+//         <p class="card-text"><small class="text-muted">Free Shipping</small></p>
+//         <div class="cart-items">
+//             <a href="#" class="btn btn-primary">View Details</a>
+//             <button class="btn btn-success">Add To Cart</button>
+//             <i class="fas fa-heart WishListIcon"></i> <!-- Assuming you are using Font Awesome for the heart icons -->
+//             <i class="fas fa-heart added"></i>
+//         </div>
+//     </div>
+// </div>
+
 
         prodEle.querySelector("button").addEventListener("click", async () => {
           await addToCart(userId + "");
