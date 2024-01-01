@@ -68,10 +68,10 @@ try {
 
 if (isLoggedIn != null) {
   // means i logged in
-  login.style.display = "none";
-  icons.classList.add("icons");
-  icons.classList.remove("hiddenIcons");
-  logoutButton.style.display = "block";
+  // login.style.display = "none";
+  // icons.classList.add("icons");
+  // icons.classList.remove("hiddenIcons");
+  // logoutButton.style.display = "block";
   // loggedOut.style.display = "none";
   // loggedIn.style.display = "block";
   // ShowsError.classList.remove("errorShow");
