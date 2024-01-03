@@ -20,50 +20,36 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<header>
-  <!-- Jumbotron -->
-  <div class="p-3 text-center bg-white border-bottom">
+  <nav class="navbar navbar-expand-xxl navbar-primary" 
+  aria-label="Seventh navbar example">
     <div class="container">
-      <div class="d-flex justify-content-between">
-        <!-- Left elements -->
-        <div class="">
-          <a href="/index.html"  class="">
-            <!-- <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="35" /> -->
-            <img src="/Resources/images/download.png" width="50" height="35" />
+      <a href="/index.html">
+        <img src="/Resources/images/download.png" height="30"/>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleXxl" aria-controls="navbarsExampleXxl" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-          </a>
-        </div>
-        <!-- Left elements -->
-
-        <!-- right elements -->
-        <div class="">
-          <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="me-1 border rounded py-1 px-3 nav-link" target="_blank"> <i class="fas fa-user-alt me-2"></i>Sign in </a>
-        </div>
-        <!-- right elements -->
+      <div class="collapse navbar-collapse" id="navbarsExampleXxl">
+        <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/Customer/HTML/products.html">Electronics</a></li>
+              <li><a class="dropdown-item" href="/Customer/HTML/products.html">Men's Products</a></li>
+              <li><a class="dropdown-item" href="/Customer/HTML/products.html">Women's Products</a></li>
+            </ul>
+          </li>
+          <a href="/Customer/HTML/signin.html"><i class="fas fa-user-alt m-1 me-md-2"></i></a>
+          <a href="/Customer/HTML/wishlist.html"><i class="fas fa-heart m-1 me-md-2"></i></a>
+          <a href="/Customer/HTML/cart.html"><i class="fas fa-shopping-cart m-1 me-md-2"></i></a>
+        </ul>
+        <form role="search">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        </form>
       </div>
     </div>
-  </div>
-  <!-- Jumbotron -->
-
-  <!-- Heading -->
-  <div class="bg-primary">
-    <div class="container py-4">
-      <!-- Breadcrumb -->
-      <nav class="d-flex">
-        <h6 class="mb-0">
-          <a href="/index.html" class="text-white-50">Home</a>
-          <span class="text-white-50 mx-2"> > </span>
-          <a href="/Customer/HTML/cart.html" class="text-white-50">Shopping cart</a>
-          <span class="text-white-50 mx-2"> > </span>
-
-          <a href="/Customer/HTML/checkout.html" class="text-white-50">Payment</a>
-        </h6>
-      </nav>
-      <!-- Breadcrumb -->
-    </div>
-  </div>
-  <!-- Heading -->
-</header>
+  </nav>
 
 <section class="bg-light py-5">
   <div class="container">

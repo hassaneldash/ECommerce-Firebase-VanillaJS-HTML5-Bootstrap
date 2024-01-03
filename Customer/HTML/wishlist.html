@@ -19,64 +19,36 @@
 </head>
 <body>
     <!--Main Navigation-->
-<header>
-  <!-- Jumbotron -->
-  <div class="p-3 text-center bg-white border-bottom">
-    <div class="container">
-      <div class="row gy-3">
-        <!-- Left elements -->
-        <div class="col-lg-2 col-sm-4 col-4">
-          <a href="/index.html"  class="float-start">
-            <!-- <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="35" /> -->
-            <img src="/Resources/images/download.png" width="" height="100" />
-          </a>
+    <nav class="navbar navbar-expand-xxl navbar-primary" 
+    aria-label="Seventh navbar example">
+      <div class="container">
+        <a href="/index.html">
+          <img src="/Resources/images/download.png" height="30"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleXxl" aria-controls="navbarsExampleXxl" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarsExampleXxl">
+          <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/Customer/HTML/products.html">Electronics</a></li>
+                <li><a class="dropdown-item" href="/Customer/HTML/products.html">Men's Products</a></li>
+                <li><a class="dropdown-item" href="/Customer/HTML/products.html">Women's Products</a></li>
+              </ul>
+            </li>
+            <a href="/Customer/HTML/signin.html"><i class="fas fa-user-alt m-1 me-md-2"></i></a>
+            <a href="/Customer/HTML/wishlist.html"><i class="fas fa-heart m-1 me-md-2"></i></a>
+            <a href="/Customer/HTML/cart.html"><i class="fas fa-shopping-cart m-1 me-md-2"></i></a>
+          </ul>
+          <form role="search">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+          </form>
         </div>
-        <!-- Left elements -->
-
-        <!-- Center elements -->
-        <div class="order-lg-last col-lg-5 col-sm-8 col-8 mb-1">
-            <div class="d-flex float-end">
-              <a href="/Customer/HTML/profile.html" class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center"> <i class="fas fa-user-alt m-1 me-md-2"></i><p class="d-none d-md-block mb-0">Profile</p> </a>
-              <a href="/Customer/HTML/wishlist.html" class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" > <i class="fas fa-heart m-1 me-md-2"></i><p class="d-none d-md-block mb-0">Wishlist</p> </a>
-              <a href="/Customer/HTML/cart.html" class="border rounded py-1 px-3 nav-link d-flex align-items-center" > <i class="fas fa-shopping-cart m-1 me-md-2"></i><p class="d-none d-md-block mb-0">My cart</p> </a>
-            </div>
-        </div>
-        <!-- Center elements -->
-
-        <!-- Right elements -->
-        <div class="col-lg-5 col-md-12 col-12 m-0 ">
-            <div class="input-group float-center justify-content-center">
-              <div class="form-outline">
-                <input type="search" id="form1" placeholder="Search" class="form-control" />
-                <!-- <label class="form-label" for="form1">Search</label> -->
-              </div>
-              <button type="button" class="btn btn-primary shadow-0">
-                <i class="fas fa-search"></i>
-              </button>
-            </div>
-          </div>
-        <!-- Right elements -->
       </div>
-    </div>
-  </div>
-  <!-- Jumbotron -->
-  <!-- Heading -->
-  <div class="bg-primary mb-4">
-    <div class="container py-4">
-      <!-- <h3 class="text-white mt-2">Men's wear</h3> -->
-      <!-- Breadcrumb -->
-      <nav class="d-flex mb-2">
-        <h6 class="mb-0">
-          <a href="/index.html" class="text-white-50">Home</a>
-          <span class="text-white-50 mx-2"> > </span>
-          <a href="/Customer/HTML/wishlist.html" class="text-white-50">Wishlist</a>
-        </h6>
-      </nav>
-      <!-- Breadcrumb -->
-    </div>
-  </div>
-  <!-- Heading -->
-</header>
+    </nav>
 
 <!-- Wishlist -->
 <div class="row">
